@@ -8,13 +8,11 @@
 
 #include "joke.h" // Include the base class header file
 
-class KnockKnockJoke : public Joke {
+class KnockKnock : public Joke {
 public:
     // Constructor
-    KnockKnockJoke(std::string setup, std::string punchline);
+    KnockKnock(std::string setup, std::string punchline);
 
-    // Override getType method to return the specific type
-    std::string getType() const;
 };
 
 

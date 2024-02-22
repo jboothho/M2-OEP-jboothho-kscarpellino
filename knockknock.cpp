@@ -5,10 +5,10 @@
 #include "knockknock.h"
 
 // Constructor definition
-KnockKnockJoke::KnockKnockJoke(std::string setup, std::string punchline)
+KnockKnock::KnockKnock(std::string setup, std::string punchline)
         : Joke("Knock Knock", setup, punchline) {}
 
 // Override getType method to return the specific type
-std::string KnockKnockJoke::getType() const {
+std::string KnockKnock::getType() const {
     return "Knock Knock";
 }

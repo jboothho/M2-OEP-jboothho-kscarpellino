@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "joke.h"
+#include "knockknock.h"
 
 int main() {
     std::string type, setup, punchline;
@@ -17,13 +18,26 @@ int main() {
     std::getline(std::cin, punchline);
 
     // Create a Joke object with the provided details
-    Joke joke(type, setup, punchline);
+    if (type == "Knock Knock") {
+        // If it's a Knock Knock joke, create a KnockKnockJoke object
+         KnockKnockJoke joke(setup, punchline);
+        // Do something with the knockKnockJoke object if needed
+        std::cout << "Here's the joke you entered:" << std::endl;
+        std::cout << "Type: " << joke.type << std::endl;
+        std::cout << "Setup: " << joke.setup << std::endl;
+        std::cout << "Punchline: " << joke.punchline << std::endl;
 
-    // Do something with the joke object, such as printing its details
-    std::cout << "Here's the joke you entered:" << std::endl;
-    std::cout << "Type: " << joke.type << std::endl;
-    std::cout << "Setup: " << joke.setup << std::endl;
-    std::cout << "Punchline: " << joke.punchline << std::endl;
+    } else {
+        // If it's not a Knock Knock joke, create a regular Joke object
+        Joke joke(type, setup, punchline);
+        // Do something with the joke object if needed
+        std::cout << "Here's the joke you entered:" << std::endl;
+        std::cout << "Type: " << joke.type << std::endl;
+        std::cout << "Setup: " << joke.setup << std::endl;
+        std::cout << "Punchline: " << joke.punchline << std::endl;
+
+    }
+
 
     // Return 0 to indicate successful execution
     return 0;
