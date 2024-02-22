@@ -11,16 +11,14 @@
 class Joke {
 public:
     // Constructor
-    Joke(std::string type, std::string setup, std::string punchline);
+    Joke(std::string type, std::string punchline);
 
     // Getter methods
     std::string getType() const;
-    std::string getSetup() const;
     std::string getPunchline() const;
 
 public:
     std::string type;      // Type of joke (e.g., Knock Knock, Pun, Riddle)
-    std::string setup;     // Setup or lead-in of the joke
     std::string punchline; // Punchline or the humorous ending of the joke
 };
 

@@ -5,20 +5,15 @@
 #include "joke.h"
 
 // Constructor definition
-Joke::Joke(std::string type, std::string setup, std::string punchline)
-        : type(type), setup(setup), punchline(punchline) {}
+Joke::Joke(std::string type, std::string punchline)
+        : type(type), punchline(punchline) {}
 
 // Getter method definitions
 std::string Joke::getType() const {
     return type;
 }
 
-std::string Joke::getSetup() const {
-    return setup;
-}
-
 std::string Joke::getPunchline() const {
     return punchline;
 }
-
 
