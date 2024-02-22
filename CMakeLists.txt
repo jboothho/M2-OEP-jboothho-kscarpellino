@@ -7,5 +7,6 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(M2_OEP_jboothho_kscarpellino
         joke.cpp
         main.cpp
-        joke.h
+        knockknock.cpp
+        knockknock.cpp
 )

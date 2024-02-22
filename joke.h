@@ -18,7 +18,7 @@ public:
     std::string getSetup() const;
     std::string getPunchline() const;
 
-private:
+public:
     std::string type;      // Type of joke (e.g., Knock Knock, Pun, Riddle)
     std::string setup;     // Setup or lead-in of the joke
     std::string punchline; // Punchline or the humorous ending of the joke
