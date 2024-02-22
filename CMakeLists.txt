@@ -9,4 +9,6 @@ add_executable(M2_OEP_jboothho_kscarpellino
         main.cpp
         knockknock.cpp
         knockknock.cpp
+        OneLiner.h
+        OneLiner.h
 )
