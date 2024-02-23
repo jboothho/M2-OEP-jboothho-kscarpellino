@@ -8,36 +8,42 @@
 #include <vector>
 #include <fstream>
 
+
+std::string promptUser();
+void oneLinerInput();
+//void knockKnockInput();
+
 int main() {
     std::string type, punchline;
     // Vector to store one-liner jokes
-    std::vector<OneLiner> OneLiners;
     // Prompt user for joke type, setup, and punchline
-    std::cout << "Enter the type of joke (e.g., One-Liner): ";
-    std::getline(std::cin, type);
-
-    // Create a Joke object with the provided details
+    type = promptUser();
     // Check if the joke type is "One-Liner"
     if (type == "One-Liner") {
-        std::string context;
-        //ask for rest of joke info based on joke type
-        std::cout << "Enter the punchline of the joke: ";
-        std::getline(std::cin, punchline);
-        std::cout << "Enter the context of the joke: ";
-        std::getline(std::cin, context);
-
-
-        // If it's a One-Liner joke, create a OneLiner object
-        OneLiner joke(context, punchline);
-        OneLiners.push_back(joke);
-
-        std::cout << "One-liner joke added successfully!" << std::endl;
-
+        oneLinerInput();
     }
+}
 
-    else {
-        std::cout << "Unsupported joke type!" << std::endl;
-    }
+/** Okay something i'm thinking is that we should have a function declared
+ *  in the superclass that must be overridden by each type that is an input
+ *  function and puts it in the file
+ */
+
+void OneLinerInput(){
+    std::vector<OneLiner> OneLiners;
+    std::string context, type, punchline;
+    //ask for rest of joke info based on joke type
+    std::cout << "Enter the punchline of the joke: ";
+    std::getline(std::cin, punchline);
+    std::cout << "Enter the context of the joke: ";
+    std::getline(std::cin, context);
+
+
+    // If it's a One-Liner joke, create a OneLiner object
+    OneLiner joke(context, punchline);
+    OneLiners.push_back(joke);
+
+    std::cout << "One-liner joke added successfully!" << std::endl;
 
     std::ofstream outFile("one-liners.txt");
     if (outFile.is_open()) {
@@ -56,7 +62,23 @@ int main() {
     } else {
         std::cerr << "Unable to open file for writing!" << std::endl;
     }
-
-
-
 }
+
+
+std::string promptUser() {
+    std::string type;
+    std::cout << "Enter the type of joke (e.g., One-Liner): ";
+
+    while (true) {
+        std::getline(std::cin, type);
+
+        if (type == "One-Liner" || type == "Knock-Knock" /* add more valid types */) {
+            break;
+        } else {
+            std::cout << "Invalid input. Please enter a valid joke type: ";
+        }
+    }
+    return type;
+}
+
+

@@ -7,17 +7,26 @@
 
 
 #include <string>
+#include <utility>
 
 class Joke {
+
 public:
     // Constructor
     Joke(std::string type, std::string punchline);
 
-    // Getter methods
-    std::string getType() const;
-    std::string getPunchline() const;
+    // Getters and setters methods
+protected:
+    std::string getType() const{
+    }
+    std::string getPunchline() const{
+    }
+    void setType(std::string new_type){
+    }
+    void setPunchline(std::string new_punchline){
+    }
 
-public:
+private:
     std::string type;      // Type of joke (e.g., Knock Knock, Pun, Riddle)
     std::string punchline; // Punchline or the humorous ending of the joke
 };
