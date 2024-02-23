@@ -5,11 +5,11 @@ project(M2_OEP_jboothho_kscarpellino)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(M2_OEP_jboothho_kscarpellino
+        joke.h
         joke.cpp
         main.cpp
         knockknock.cpp
-        knockknock.cpp
-        OneLiner.h
+        knockknock.h
         OneLiner.h
         OneLiner.cpp
 )

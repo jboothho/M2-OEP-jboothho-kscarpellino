@@ -2,10 +2,10 @@
 // Created by Julia Booth-Howe on 2/22/24.
 //
 
-#include "oneliner.h"
+#include "OneLiner.h"
 
 // Constructor definition
-OneLiner::OneLiner(std::string context, std::string punchline)
+OneLiner::OneLiner(string context, string punchline)
         : Joke("One-Liner", punchline), context(context) {}
 
 // Getter definition

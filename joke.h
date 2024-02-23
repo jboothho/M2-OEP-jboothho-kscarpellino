@@ -8,6 +8,7 @@
 
 #include <string>
 #include <utility>
+using namespace std;
 
 class Joke {
 
@@ -15,20 +16,20 @@ public:
     // Constructor
     Joke(std::string type, std::string punchline);
 
-    // Getters and setters methods
-protected:
-    std::string getType() const{
-    }
-    std::string getPunchline() const{
-    }
-    void setType(std::string new_type){
-    }
-    void setPunchline(std::string new_punchline){
-    }
+    // Getters
+    std::string getType() const;
+    std::string getPunchline() const;
 
-private:
-    std::string type;      // Type of joke (e.g., Knock Knock, Pun, Riddle)
-    std::string punchline; // Punchline or the humorous ending of the joke
+    //setters
+    void setType(string type);
+    void setPunchline(string punchline);
+
+    /** function that will be overridden in each subclass to input that joke to the jokebook **/
+    virtual void inputJoke(Joke j);
+
+protected:
+    string type;      // Type of joke (e.g., Knock Knock, Pun, Riddle)
+    string punchline; // Punchline or the humorous ending of the joke
 };
 
 

@@ -27,9 +27,12 @@ int main() {
 /** Okay something i'm thinking is that we should have a function declared
  *  in the superclass that must be overridden by each type that is an input
  *  function and puts it in the file
+ *
+ *   i made a function called inputJoke in Joke.h that won't be defined in the cpp
+ *   but will be defined for each individual joke type
  */
 
-void OneLinerInput(){
+void oneLinerInput(){
     std::vector<OneLiner> OneLiners;
     std::string context, type, punchline;
     //ask for rest of joke info based on joke type
