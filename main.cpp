@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "joke.h"
+#include "knockknock.h"
 #include "OneLiner.h"
 #include <vector>
 #include <fstream>
@@ -14,13 +15,17 @@ void oneLinerInput();
 //void knockKnockInput();
 
 int main() {
-    std::string type, punchline;
+    std::string type_of_joke, punchline;
+    std::vector<OneLiner> OneLiners;
+
     // Vector to store one-liner jokes
     // Prompt user for joke type, setup, and punchline
-    type = promptUser();
+    type_of_joke= promptUser();
+
     // Check if the joke type is "One-Liner"
-    if (type == "One-Liner") {
-        oneLinerInput();
+    if (type_of_joke == "One-Liner") {
+        //then create the joke object and
+        inputJoke();
     }
 }
 
@@ -32,7 +37,7 @@ int main() {
  *   but will be defined for each individual joke type
  */
 
-void oneLinerInput(){
+/*void oneLinerInput(){
     std::vector<OneLiner> OneLiners;
     std::string context, type, punchline;
     //ask for rest of joke info based on joke type
@@ -48,7 +53,9 @@ void oneLinerInput(){
 
     std::cout << "One-liner joke added successfully!" << std::endl;
 
-    std::ofstream outFile("one-liners.txt");
+
+ ///**** OKAY HERE SPLIT ****/
+   /* std::ofstream outFile("one-liners.txt");
     if (outFile.is_open()) {
         // Write heading
         outFile << "=== One-Liners ===" << std::endl;
@@ -65,8 +72,7 @@ void oneLinerInput(){
     } else {
         std::cerr << "Unable to open file for writing!" << std::endl;
     }
-}
-
+}*/
 
 std::string promptUser() {
     std::string type;

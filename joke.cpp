@@ -2,8 +2,15 @@
 #include "joke.h"
 using namespace std;
 
+
+//default constructor
+Joke::Joke(){
+    type = "";
+    punchline = "";
+}
+
 // Constructor definition
-Joke::Joke(string type, string punchline)
+Joke::Joke(std::string type, std::string punchline)
         : type(type), punchline(punchline) {}
 
 // Getter method definitions

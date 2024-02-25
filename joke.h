@@ -13,19 +13,22 @@ using namespace std;
 class Joke {
 
 public:
+    //Default constructor
+    Joke();
+
     // Constructor
     Joke(std::string type, std::string punchline);
 
     // Getters
-    std::string getType() const;
-    std::string getPunchline() const;
+    virtual std::string getType() const;
+    virtual std::string getPunchline() const;
 
     //setters
-    void setType(string type);
-    void setPunchline(string punchline);
+    virtual void setType(string type);
+    virtual void setPunchline(string punchline);
 
     /** function that will be overridden in each subclass to input that joke to the jokebook **/
-    virtual void inputJoke(Joke j);
+    virtual void inputJoke() = 0;
 
 protected:
     string type;      // Type of joke (e.g., Knock Knock, Pun, Riddle)
