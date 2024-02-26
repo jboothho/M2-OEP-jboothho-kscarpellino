@@ -25,10 +25,10 @@ public:
     std::pair<string, string> inputJoke() override;
 
     /** TODO: writeJoke function that will add joke to the jokebook **/
-    void writeJoke(std::vector<unique_ptr<OneLiner>> o);
+    void writeJoke(std::vector<unique_ptr<Joke>> j) override;
 
 private:
-    std::string context;         // Context of the joke (e.g., stand-up comedy, casual conversation)
+    std::string context;    // Context of the joke (e.g., stand-up comedy, casual conversation)
 };
 
 

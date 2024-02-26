@@ -29,8 +29,8 @@ public:
     virtual void setPunchline(string punchline);
 
     /** function that will be overridden in each subclass to input that joke to the jokebook **/
-    virtual std::pair<string, string>inputJoke();
-    virtual void writeJoke(std::vector<Joke> j);
+    virtual std::pair<string, string>inputJoke() = 0;
+    virtual void writeJoke(std::vector<unique_ptr<Joke>> j);
 
 
 protected:

@@ -35,7 +35,7 @@ int main() {
             oneLiners.push_back(make_unique<OneLiner>(punchline, context));
         }
     }
-    writeJoke(oneLiners);
+    //writeJoke(oneLiners);
 
 }
 
@@ -48,9 +48,7 @@ int main() {
  */
 
 /** okay so lets think through this **/
-// im gonna have the first function return the two strings that will make the joke object
-// then those two strings will go into a function
-// so i shoudl put the function into oneliner?
+
 /*void oneLinerInput(){
     std::vector<OneLiner> OneLiners;
     std::string context, type, punchline;
@@ -68,8 +66,7 @@ int main() {
     std::cout << "One-liner joke added successfully!" << std::endl;
 
 
- ///**** OKAY HERE SPLIT ****/
-   /* std::ofstream outFile("one-liners.txt");
+   std::ofstream outFile("one-liners.txt");
     if (outFile.is_open()) {
         // Write heading
         outFile << "=== One-Liners ===" << std::endl;
