@@ -7,6 +7,7 @@
 #include "knockknock.h"
 #include "OneLiner.h"
 #include <vector>
+#include <memory>
 #include <fstream>
 
 
@@ -15,8 +16,9 @@ void oneLinerInput();
 //void knockKnockInput();
 
 int main() {
-    std::string type_of_joke, punchline;
-    std::vector<OneLiner> OneLiners;
+    std::string type_of_joke, punchline, context;
+    vector<unique_ptr<OneLiner>> oneLiners;
+    OneLiner o;
 
     // Vector to store one-liner jokes
     // Prompt user for joke type, setup, and punchline
@@ -25,7 +27,12 @@ int main() {
     // Check if the joke type is "One-Liner"
     if (type_of_joke == "One-Liner") {
         //then create the joke object and
-        inputJoke();
+        auto result = o.inputJoke();
+        punchline = result.first;
+        context = result.second;
+        // but now maybe i send that to a new function
+        oneLiners.push_back(make_unique<OneLiner>(punchline, context));
+        writeJoke(std::vector<OneLiner> OneLiners);
     }
 }
 
@@ -37,6 +44,10 @@ int main() {
  *   but will be defined for each individual joke type
  */
 
+/** okay so lets think through this **/
+// im gonna have the first function return the two strings that will make the joke object
+// then those two strings will go into a function
+// so i shoudl put the function into oneliner?
 /*void oneLinerInput(){
     std::vector<OneLiner> OneLiners;
     std::string context, type, punchline;

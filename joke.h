@@ -1,6 +1,3 @@
-//
-// Created by Kylie Scarpellino on 2/22/24.
-//
 
 #ifndef M2_OEP_JBOOTHHO_KSCARPELLINO_JOKE_H
 #define M2_OEP_JBOOTHHO_KSCARPELLINO_JOKE_H
@@ -16,8 +13,12 @@ public:
     //Default constructor
     Joke();
 
+    //constructor that only takes type and leaves punchline open
+    Joke(std:: string type);
+
     // Constructor
     Joke(std::string type, std::string punchline);
+
 
     // Getters
     virtual std::string getType() const;
@@ -28,7 +29,9 @@ public:
     virtual void setPunchline(string punchline);
 
     /** function that will be overridden in each subclass to input that joke to the jokebook **/
-    virtual void inputJoke() = 0;
+    virtual std::pair<string, string>inputJoke();
+    virtual void writeJoke(std::vector<Joke> j);
+
 
 protected:
     string type;      // Type of joke (e.g., Knock Knock, Pun, Riddle)

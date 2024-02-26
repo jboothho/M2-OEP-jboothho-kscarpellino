@@ -9,6 +9,12 @@ Joke::Joke(){
     punchline = "";
 }
 
+// constructor that takes just the type and leaves punchline open
+Joke::Joke(std::string type) {
+    this-> type = type;
+    this -> punchline = "";
+}
+
 // Constructor definition
 Joke::Joke(std::string type, std::string punchline)
         : type(type), punchline(punchline) {}
