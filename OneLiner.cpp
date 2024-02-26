@@ -39,24 +39,22 @@ std::pair<string, string> OneLiner::inputJoke() {
     return std::make_pair(punchline, context);
 }
 
-    void writeJoke(std::vector<OneLiner> OneLiners) {
-        std::ofstream outFile("one-liners.txt");
-        if (outFile.is_open()) {
-            // Write heading
-            outFile << "=== One-Liners ===" << std::endl;
-
-            // Write one-liners
-            for (const auto &joke: OneLiners) {
-                outFile << "Context: " << joke.getContext() << std::endl;
-                outFile << "Punchline: " << joke.getPunchline() << std::endl;
-                outFile << std::endl; // Separate each one-liner
-            }
-
-            std::cout << "One-liners saved to JokeBook.txt" << std::endl;
-            outFile.close();
-        } else {
-            std::cerr << "Unable to open file for writing!" << std::endl;
+void writeJoke(std::vector<unique_ptr<OneLiner>> o) {
+    std::ofstream outFile("one-liners.txt");
+    if (outFile.is_open()) {
+        // Write heading
+        outFile << "=== One-Liners ===" << std::endl;
+        // Write one-liners
+        for (const auto &joke : o) {
+            outFile << "Context: " << joke->getContext() << std::endl;
+            outFile << "Punchline: " << joke->getPunchline() << std::endl;
+            outFile << std::endl; // Separate each one-liner
         }
+        std::cout << "One-liners saved to one-liners.txt" << std::endl;
+        outFile.close();
+    } else {
+        std::cerr << "Unable to open file for writing!" << std::endl;
     }
+}
 
 

@@ -22,18 +22,21 @@ int main() {
 
     // Vector to store one-liner jokes
     // Prompt user for joke type, setup, and punchline
-    type_of_joke= promptUser();
+    while (type_of_joke != "Quit"){
+        type_of_joke = promptUser();
 
-    // Check if the joke type is "One-Liner"
-    if (type_of_joke == "One-Liner") {
-        //then create the joke object and
-        auto result = o.inputJoke();
-        punchline = result.first;
-        context = result.second;
-        // but now maybe i send that to a new function
-        oneLiners.push_back(make_unique<OneLiner>(punchline, context));
-        writeJoke(std::vector<OneLiner> OneLiners);
+        // Check if the joke type is "One-Liner"
+        if (type_of_joke == "One-Liner") {
+            //then create the joke object and
+            auto result = o.inputJoke();
+            punchline = result.first;
+            context = result.second;
+            // but now maybe i send that to a new function
+            oneLiners.push_back(make_unique<OneLiner>(punchline, context));
+        }
     }
+    writeJoke(oneLiners);
+
 }
 
 /** Okay something i'm thinking is that we should have a function declared
@@ -87,7 +90,7 @@ int main() {
 
 std::string promptUser() {
     std::string type;
-    std::cout << "Enter the type of joke (e.g., One-Liner): ";
+    std::cout << "Enter the type of joke (e.g., One-Liner) or type 'quit' to stop: ";
 
     while (true) {
         std::getline(std::cin, type);
